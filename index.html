@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>网易云音乐控制</title>
+    <style>
+        body { text-align: center; margin-top: 50px; font-family: Arial; }
+        button { font-size: 24px; margin: 20px; padding: 20px 40px; }
+    </style>
+</head>
+<body>
+    <h1>网易云音乐控制</h1>
+    <button onclick="sendCmd('playpause')">播放/暂停</button>
+    <button onclick="sendCmd('prev')">上一曲</button>
+    <button onclick="sendCmd('next')">下一曲</button>
+    <script>
+        function sendCmd(cmd) {
+            fetch('http://192.168.5.79:5000/' + cmd)
+                .then(() => alert('已发送指令: ' + cmd));
+        }
+    </script>
+</body>
+</html>
