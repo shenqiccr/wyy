@@ -1,7 +1,9 @@
 from flask import Flask
+from flask_cors import CORS
 import keyboard
 
 app = Flask(__name__)
+CORS(app)  # 允许所有跨域请求
 
 @app.route('/playpause')
 def playpause():
